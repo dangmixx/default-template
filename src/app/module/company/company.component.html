@@ -1,0 +1,70 @@
+<div class="page--block">
+  <div class="title-page">{{ "title" | translate }}</div>
+  <div class="content-page">
+    <div class="button-form">
+      <button mat-raised-button class="default">Thêm mới</button>
+    </div>
+    <mat-table
+      [dataSource]="gridDataOrders.data"
+      matSort
+      (matSortChange)="sortData($event)"
+      class="mat-elevation-z8 table"
+    >
+      <!-- Position Column -->
+      <ng-container matColumnDef="orderNo">
+        <mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header>
+          STT
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="order-no">
+          {{ element.orderNo }}
+        </mat-cell>
+        <mat-footer-cell *matFooterCellDef class="no-items"> </mat-footer-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="createdOn">
+        <mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header
+          >Công ty
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.createdOn | date: "dd/MM/yyyy - HH:mm:ss" }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="state">
+        <mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header>
+          Địa chỉ
+        </mat-header-cell>
+        <mat-cell
+          *matCellDef="let element"
+          class="state-order"
+          [ngClass]="'status-' + element.state"
+        >
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="total">
+        <mat-header-cell
+          cdkDrag
+          *matHeaderCellDef
+          mat-sort-header
+          class="text-right-flex"
+        >
+        Email
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="text-right-flex total-price">
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      <!-- 
+      <mat-footer-row
+        [class.hide-footer]="gridDataOrders.total !== 0"
+        *matFooterRowDef="['orderNo']"
+      >
+      </mat-footer-row> -->
+    </mat-table>
+  </div>
+</div>

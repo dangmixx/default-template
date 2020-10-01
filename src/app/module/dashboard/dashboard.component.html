@@ -1,0 +1,27 @@
+<div class="page--block">
+  <div class="title-page">BarCode</div>
+  <div class="content-page">
+    <form (ngSubmit)="submitForm()">
+      <mat-form-field class="example-full-width">
+        <input
+          type="text"
+          placeholder="Enter Code"
+          aria-label="Number"
+          matInput
+          [formControl]="myControl"
+        />
+      </mat-form-field>
+    </form>
+
+    <div>
+      <ng-container *ngFor="let item of barCodeList.data">
+        <div class="item-barcode">
+          <p>Format: {{ item.format }}</p>
+          <p>Code: {{ item.code }}</p>
+          <p>Type: {{ item.type }}</p>
+          <p>Value: {{ item.value }}</p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

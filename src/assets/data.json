@@ -1,0 +1,23 @@
+{
+    "data": [
+        {
+            "code": "0000001",
+            "type": "Product01",
+            "format": "QR_CODE",
+            "value": "0123456789"
+        },
+        {
+            "code": "0000002",
+            "type": "Product01",
+            "format": "QR_CODE",
+            "value": "0123456789"
+        },
+        {
+            "code": "0000003",
+            "type": "Product01",
+            "format": "QR_CODE",
+            "value": "0123456789"
+        }
+    ],
+    "total": 3
+}

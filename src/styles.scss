@@ -1,1 +1,161 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0 !important;
+  overflow: hidden;
+}
+
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  --h0: 24px;
+  --h1: 20px;
+  --h2: 18px;
+  --h3: 16px;
+  --h4: 14px;
+  --h5: 12px;
+
+  --red: #dd0031;
+  --blue: #6565ff;
+  --gray: #fdfdfd;
+  --white: #fff;
+}
+$BLUE: #6565ff;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.main--block {
+  // max-width: 1280px;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  margin-top: 60px;
+  flex-direction: row;
+  min-height: calc(100vh - 60px);
+}
+
+.dashboard--block {
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow: auto;
+  position: relative;
+  background-color: var(--white);
+  ul {
+    margin: 0 !important;
+    li {
+      padding: 50px;
+    }
+  }
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.mat-sidenav {
+  background-color: var(--gray);
+}
+
+.mat-drawer-container {
+  background-color: var(--white) !important;
+}
+.mat-drawer {
+  background-color: var(--gray) !important;
+}
+
+ul {
+  margin-block-end: 0;
+  margin-block-start: 0;
+  margin-inline-end: 0;
+  margin-inline-start: 0;
+}
+
+ul {
+  padding: 0px !important;
+  list-style-type: none !important;
+  li {
+    list-style-type: none !important;
+    padding: 5px;
+  }
+}
+
+.page--block {
+  padding: 10px;
+  .title-page {
+    font-size: var(--h0);
+    font-weight: 700;
+  }
+  .content-page {
+    margin-top: 15px;
+  }
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2) !important;
+}
+
+mat-header-row {
+  border-radius: 5px;
+  background-color: var(--red) !important;
+  border-color: var(--gray) !important;
+  min-height: 45px !important;
+  .mat-sort-header-content {
+    color: var(--white);
+    font-size: var(--h3);
+    font-weight: 500;
+  }
+  .mat-sort-header-arrow {
+    color: var(--white);
+  }
+}
+
+mat-sidenav-content {
+  padding-left: 5px !important;
+}
+
+.button-form {
+  padding: 5px 0 10px 0px;
+  text-align: center;
+
+  button {
+    &.default {
+      background-color: var(--red);
+      color: var(--white);
+      font-weight: bold;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  mat-sidenav[ng-reflect-mode="side"] {
+    &.open-nav {
+      visibility: visible !important;
+      transform: translate3d(calc(-100% + 60px), 0, 0) !important;
+      .navigation-container {
+        max-width: 60px !important;
+        min-width: 60px !important;
+      }
+    }
+  }
+  .open-nav-content {
+    margin-left: 60px !important;
+  }
+}
